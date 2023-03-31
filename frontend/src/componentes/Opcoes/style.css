@@ -1,0 +1,62 @@
+.opcoes {
+  display: flex;
+  align-items: center;
+  margin: auto;
+}
+
+.opcao {
+  margin: auto;
+  display: flex;
+  font-size: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  padding: 20px; 
+  width: 168px;
+  height: 84px;
+  color: black;
+}
+
+.opcao img{
+ padding: 20px;
+ width: 84px;
+ height: 84px;
+}
+
+.opcoes a {
+  border-radius: 25px;
+
+}
+
+/* unvisited link */
+ul a:link {
+  color: red;
+}
+
+/* visited link */
+ul a:visited {
+  color: #86836d;
+}
+
+/* mouse over link */
+ul a:hover {
+  transition: 1s;
+  background-color: rgb(219,214,211);
+  color: #172121;
+
+}
+
+.opcao:hover {
+  transition: 1s;
+  font-size: 2rem;
+  color: #172121;
+}
+
+/* selected link */
+ul a:active {
+  
+  color: rgb(0, 82, 159);
+
+}
+

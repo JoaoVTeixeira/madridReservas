@@ -1,0 +1,126 @@
+.HomeBody {
+    background-color: #86836D;
+    height: 100vh;
+    background-image: url('https://www.itagres.com.br/wp-content/uploads/2022/04/CARRARA-LUCE_F19pc-scaled.jpg');
+
+}
+
+.IntraBody{
+    height: 795px;
+    background-image: url('https://www.itagres.com.br/wp-content/uploads/2022/04/CARRARA-LUCE_F19pc-scaled.jpg');
+
+}
+
+.HomeContainer {
+    margin: 0 auto 0;
+    padding: 0px 0px;
+    box-shadow: 0 0 15px 5px rgba(20, 28, 37, 0.2);
+    width: 90vw;
+    height: 100vh;
+
+}
+
+.FooterHome{
+    margin-top: 90px;
+}
+
+.FooterSalas{
+margin-top: 58px;
+}
+
+.FooterIntranet{
+    position: relative;
+    bottom: 112px;
+
+}
+    
+
+.salaDadosContainer{
+    margin-top: 73px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    height: 600px;
+    padding: 20px 40px;
+
+}
+
+.salaDados{
+    
+    align-items: center;
+    justify-items: center;
+}
+
+.ImgsContainer{
+    padding-top: 120px;
+}
+
+.imagemSalasContainer{
+ padding: 0px 0px;
+}
+
+.imagemSalas{
+    height: 40vh;
+    width: 1320px;
+}
+
+.ImagesRow1Container{
+    
+    display: flex;
+    justify-content: space-around;
+    width: 100vw;
+    margin: auto;
+
+}
+
+.ImagesRow2Container{
+    
+    display: flex;
+    justify-content: space-around;
+    width: 100vw;
+    margin: auto;
+
+}
+
+.IntraImg{
+    width: 12.5vw;
+    height: 22vh;
+    border-radius: 50%;
+    box-shadow: 0 0 15px 5px rgba(20, 28, 37, 0.8);
+
+}
+
+.imgIndividual{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15vw;
+    height: 25vh;
+    padding: 0px 0px;
+    margin: auto;
+
+
+
+}
+
+.card-img-top{
+    width: 520px;
+    height: 505px;
+    border-radius: 3px;
+    box-shadow: 0 0 15px 5px rgba(20, 28, 37, 0.2);
+
+}
+
+.tabela{
+    box-shadow: 0 0 15px 5px rgba(20, 28, 37, 0.2);
+    padding: 10px;
+    border-radius: 10px;
+    width: 1300px;
+    margin: auto;
+}
+
+.bordered{
+    border: 5px solid gray;
+}

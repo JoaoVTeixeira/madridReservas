@@ -1,0 +1,17 @@
+.logo {  
+    display: flex;
+    font-size: 50px;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+  }
+
+.logoimg {
+    margin:auto;
+    height: 130px;
+    border-radius: 20px;
+}
+
+li {
+  list-style: none;
+}

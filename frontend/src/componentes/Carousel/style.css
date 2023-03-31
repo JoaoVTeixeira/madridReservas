@@ -1,0 +1,83 @@
+
+
+.Titulo{
+    display: flex;
+    justify-content: center;
+}
+.Titulo h1{
+    padding: 10px;
+    -webkit-text-stroke: 0.5px rgb(254, 190, 16); /* width and color */
+    font-size: 80px;
+    font-family: sans; color: rgb(0, 0, 0);
+
+}
+
+.Carrossel{
+    width: auto;
+    height: auto;
+    margin: auto;
+    padding: 10px 0px 10px 0px;
+}
+
+.image{
+    width: 1295px;
+    height: 720px;
+    margin: auto;
+    border-radius: 0px;
+    
+}
+
+.carousel-control-next{
+    border-radius: 5px;
+    height: 350px;
+    margin: auto;
+}
+
+.carousel-control-prev{
+    border-radius: 5px;
+    height: 350px;
+    margin: auto;
+
+}
+.card-body {
+    padding: 0px 0px;
+}
+
+.card-img{
+    border-radius: 0px;
+    box-shadow: 0 0 15px 5px rgba(20, 28, 37, 0.2);
+    border: 0.5px groove #172121;
+    height: 50vh;
+    border-radius: 5px;
+}
+
+.imgLetras{
+    font-size: 0px;
+}
+
+.imgLetras{
+    color: black;
+    background-color: rgb(255, 255, 255, 0.8);
+    text-transform: uppercase;
+        border-radius: 50px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.imgLetras h3{
+    font-size: 1.5rem;
+    padding: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: bolder;
+}
+
+.imgLetras p{
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    padding-bottom: 10px;
+}
+
+.carrosselTexto{
+    margin-bottom: 10px;
+}
+

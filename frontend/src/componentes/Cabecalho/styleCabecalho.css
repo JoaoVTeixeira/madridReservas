@@ -1,0 +1,14 @@
+.Cabecalho{
+    background-color:rgb(247,247,247);
+    display: flex;
+    justify-content: center;
+    border-bottom: 3px solid #172121;
+    padding: 20px;
+    height: 170px;
+    width: 1320px;
+  }
+
+.border-bottom{
+  box-shadow: 0 0 15px 5px rgba(239, 241, 244, 0.8);
+
+}
