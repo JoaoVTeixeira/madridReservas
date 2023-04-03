@@ -4,7 +4,7 @@ import { Container, Row, Col, Card, Form } from 'react-bootstrap';
 import { useParams, useLocation, useNavigate } from "react-router-dom";
 import Cabecalho from '../componentes/Cabecalho/cabecalho';
 import Footer from '../componentes/Footer/Footer'
-
+import funcionariosService from '../services/funcionariosService';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './style.css';
 
@@ -23,7 +23,8 @@ function Salas() {
       async function fetchFormData () {
       
       try {        
-        const response = await axios.get(`http://localhost:5000/api/funcionarios/${id}`);
+        //const response = await axios.get(`http://localhost:5000/api/funcionarios/${id}`);
+        const response = await funcionariosService.getOnefuncionario(id)
         setFormData(response.data);
       } catch (error) {
         console.error(error);
@@ -41,11 +42,13 @@ function Salas() {
         if (event.nativeEvent.submitter.name === "salvar") {
           alert(id);
           if (id === ":id") {
-              await axios.post('http://localhost:5000/api/funcionarios/',funcionario );
+              //await axios.post('http://localhost:5000/api/funcionarios/',funcionario );
+              await funcionariosService.createfuncionarios(funcionario)
               alert('incluido com sucesso!'); 
           }
           else {
-              await axios.put(`http://localhost:5000/api/funcionarios/${id}`,funcionario );
+              //await axios.put(`http://localhost:5000/api/funcionarios/${id}`,funcionario );
+              await funcionariosService.updatefuncionarios(id, funcionario);
               alert('alterado com sucesso!');
           }
         }

@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Container, Row, Col, Form, FormControl, Button, Table, Image } from 'react-bootstrap';
 import Cabecalho from '../componentes/Cabecalho/cabecalho';
 import { Link } from 'react-router-dom';
-
+import funcionariosService from '../services/funcionariosService';
 import './style.css'
 
 function Funcionarios() {
@@ -15,7 +15,8 @@ function Funcionarios() {
     
     try {
       
-      const response = await axios.get('http://localhost:5000/api/funcionarios');
+      //const response = await axios.get('http://localhost:5000/api/funcionarios');
+      const response = await funcionariosService.getfuncionario();
       setTableData(response.data);
     } catch (error) {
       console.error(error);
@@ -27,8 +28,10 @@ function Funcionarios() {
   
   async function handleDelete(id) {
     try {
-           await axios.delete(`http://localhost:5000/api/funcionarios/${id}`);
-            alert('deletado com sucesso!');
+           //await axios.delete(`http://localhost:5000/api/funcionarios/${id}`);
+           await funcionariosService.deletefuncionarios(id) 
+           alert('deletado com sucesso!');
+           this.fetchTableData();
     } catch (error) {
       console.error(error);
     }      

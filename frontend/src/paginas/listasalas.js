@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Container, Row, Col, Form, FormControl, Button, Table, Image } from 'react-bootstrap';
 import Cabecalho from '../componentes/Cabecalho/cabecalho';
-import { Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import salasService from '../services/salasService';
 
 import './style.css'
@@ -10,6 +10,7 @@ import './style.css'
 function Funcionarios() {
   
   const [tableData, setTableData] = useState([]);
+  const { id } = useParams();
 
   useEffect(() => {
     async function fetchTableData () {
@@ -31,8 +32,10 @@ function Funcionarios() {
   
   async function handleDelete(id) {
     try {
-           await axios.delete(`http://localhost:5000/api/salas/${id}`);
-            alert('deletado com sucesso!');
+           //await axios.delete(`http://localhost:5000/api/salas/${id}`);
+           const response = await salasService.deleteSalas(id,) 
+           alert('deletado com sucesso!');
+           this.fetchTableData();
     } catch (error) {
       console.error(error);
     }      

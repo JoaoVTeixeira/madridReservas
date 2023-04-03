@@ -10,6 +10,7 @@ import './style.css';
 
 import '../componentes/Cabecalho/styleCabecalho.css'
 import './form.css'
+import clientesService from '../services/clientesService';
 
 
 function Salas() {
@@ -23,7 +24,8 @@ function Salas() {
       async function fetchFormData () {
       
       try {        
-        const response = await axios.get(`http://localhost:5000/api/clientes/${id}`);
+        //const response = await axios.get(`http://localhost:5000/api/clientes/${id}`);
+        const response = await clientesService.getOneCliente(id);
         setFormData(response.data);
       } catch (error) {
         console.error(error);
@@ -41,11 +43,13 @@ function Salas() {
         if (event.nativeEvent.submitter.name === "salvar") {
           alert(id);
           if (id === ":id") {
-              await axios.post('http://localhost:5000/api/clientes/',cliente );
+              //await axios.post('http://localhost:5000/api/clientes/',cliente );
+              await clientesService.createClientes(cliente);
               alert('incluido com sucesso!'); 
           }
           else {
-              await axios.put(`http://localhost:5000/api/clientes/${id}`,cliente);
+              //await axios.put(`http://localhost:5000/api/clientes/${id}`,cliente);
+              await clientesService.updateClientes(id, cliente)
               alert('alterado com sucesso!');
           }
         }
