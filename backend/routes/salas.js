@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const salaController = require('../controller/salacontroller.js');
+const salaController = require('../controllers/salacontroller.js');
 
 router.get('/', salaController.getSala);
 router.get('/:id', salaController.getSalaId);

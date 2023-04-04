@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const funcionarioController = require('../controller/funcionariocontroller.js');
+const funcionarioController = require('../controllers/funcionariocontroller.js');
 
 router.get('/', funcionarioController.getFuncionario);
 router.get('/:id', funcionarioController.getFuncionarioId);

@@ -3,6 +3,8 @@ import {
   Button,
   Container
 } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+
 import {FaWhatsapp } from 'react-icons/fa';
 import './whats.css'
 import './style.css'
@@ -12,7 +14,7 @@ function Reserva() {
 
     <Container fluid className='botaoContainer'>
      <div className='botao'>
-     <a href="/" class="bn13">RESERVAS ABERTAS</a>
+     <Link to="/reservasalas" class="bn13">RESERVAS ABERTAS</Link>
 
      </div>
      
