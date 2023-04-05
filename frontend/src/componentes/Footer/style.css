@@ -1,12 +1,14 @@
 footer {
     border-top: 3px solid #172121 ;
-    display: flex;
     background-color:#444554 ;
     height: 7vh;
-    position: relative;
     align-items: center;
+    position: relative;
 }
 
+.footerCont{
+    position: absolute;  
+}
 
 
 .Icones {

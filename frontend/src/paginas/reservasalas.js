@@ -19,10 +19,9 @@ function ReservaSalas() {
 
 
     
-      <div className='FooterHome'>
-        <Footer/>
-        </div>
+     
       </div>
+      <Footer/>
     </Container>
       )
       };
