@@ -16,7 +16,6 @@ import {
 } from "react-bootstrap";
 import Cabecalho from "../Cabecalho/cabecalho";
 import { useParams, Link } from "react-router-dom";
-import ComboSalas from "../combosalas.js/combosalas";
 import salasService from "../../services/salasService";
 import './style.css'
 
@@ -56,20 +55,34 @@ function ReservaSalas() {
       <div className="reservasalas">
         <Form className="reservas__container">
           <div className="primeiraCol">
-          <ComboSalas/>
-          {console.log(ComboSalas)}
+            <Dropdown className="menu">
+              <Dropdown.Toggle>Escolha a Sala</Dropdown.Toggle>
+              <Dropdown.Menu id="dropdown-basic-button" title="Salas">
+                {tableData.map((row, index) => {
+                  return (
+                    <Dropdown.Item href="#/action-1">
+                      {row.descricao}
+                    </Dropdown.Item>
+                  );
+                })}
+              </Dropdown.Menu>
+            </Dropdown>
+
             <div className="carrossel">
               <Carousel>
                 {tableData.map((item, index) => (
                   <Carousel.Item key={item.id}>
-                    
+                    <Link
+                      to={`/salas/${item._id}`}
+                      state={{ classe: "visually-hidden" }}
+                    >
                       <Card.Img
                         key={index}
                         src={item.imagem}
                         alt=""
-                        className="imageres"
+                        className="image"
                       />
-                   
+                    </Link>
 
                     <Carousel.Caption className="carrosselTexto">
                       <div className="imgLetras">
