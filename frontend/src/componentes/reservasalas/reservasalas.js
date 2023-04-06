@@ -81,6 +81,7 @@ function ReservaSalas() {
                 ))}
               </Carousel>
             </div>
+            
           </div>
 
           <div className="segundaCol">
@@ -97,6 +98,8 @@ function ReservaSalas() {
             <Form.Label>Obs.</Form.Label>
             <Form.Control type="text"></Form.Control>
           </div>
+          <Form.Control type="submit" value={"Confirma"}/>
+          <Form.Control type="submit" value={"Cancela"}/>
         </Form>
       </div>
     </Container>

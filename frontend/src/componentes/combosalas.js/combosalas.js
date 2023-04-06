@@ -1,59 +1,45 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import {
-    Container,
-    Row,
-    Col,
-    Form,
-    FormControl,
-    Button,
-    Table,
-    Image,
-    Dropdown,
-    DropdownButton,
-    Carousel,
-    Card,
-  } from "react-bootstrap";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import salasService from '../../services/salasService';
-
+  Container,
+  Row,
+  Col,
+  Form,
+  FormControl,
+  Button,
+  Table,
+  Image,
+  Dropdown,
+  DropdownButton,
+  Carousel,
+  Card,
+} from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import salasService from "../../services/salasService";
+import './style.css'
 function ComboSalas() {
-
   const [salaReservas, setSalas] = useState([]);
 
   useEffect(() => {
     const fetchComboData = async () => {
-    
-        try {
-    
-            const responseSala = await salasService.getSalas();
-            console.log(responseSala)
-            setSalas(responseSala.data);
-        } catch (error) {
-          console.error(error);
-        }    
-      };
-      fetchComboData();      
-
+      try {
+        const responseSala = await salasService.getSalas();
+        console.log(responseSala);
+        setSalas(responseSala.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchComboData();
   }, []);
-  
 
   return (
-
-    <Dropdown className="menu">
-    <Dropdown.Toggle>Escolha a Sala</Dropdown.Toggle>
-    <Dropdown.Menu id="dropdown-basic-button" title="Salas">
+    <div className="form__select">
+    <Form.Select >
       {salaReservas.map((row, index) => {
-        return (
-          <Dropdown.Item href="#/action-1" onSelect={() => handleSelect(row)}>
-            {row.tipo}
-          </Dropdown.Item>
-        );
+        return <option className="form__select">{row.tipo}</option>;
       })}
-    </Dropdown.Menu>
-  </Dropdown>
-          
-      
-
+    </Form.Select>
+    </div>
   );
 }
 
