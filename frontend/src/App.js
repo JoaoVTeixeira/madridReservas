@@ -6,6 +6,7 @@ import Funcionarios from './paginas/funcionarios';
 import Home from './paginas/home';
 import Salas from './paginas/salas'
 import ReservaSalas from './paginas/reservasalas';
+import Reserva from './paginas/reservas';
 import ListaSalas from './paginas/listasalas'
 import IncluiFunc from './paginas/incluifunc'
 import IncluiClient from './paginas/incluircliente'
@@ -24,6 +25,7 @@ function App() {
           <Route path="/funcionarios" element={<Funcionarios/>} />
           <Route path="/salas/:id" element={<Salas/>} />
           <Route path="/reservasalas" element={<ReservaSalas/>} />
+          <Route path="/reservas" element={<Reserva/>} />
 
           <Route path="/funcionarios/:id" element={<IncluiFunc/>} />
           <Route path="/clientes/:id" element={<IncluiClient/>} />

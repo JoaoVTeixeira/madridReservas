@@ -15,72 +15,68 @@ import {
   Card,
 } from "react-bootstrap";
 import Cabecalho from "../Cabecalho/cabecalho";
-import { useParams, Link } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import ComboSalas from "../combosalas.js/combosalas";
-import salasService from "../../services/salasService";
+import reservasService from "../../services/reservasService";
 import './style.css'
 
 function ReservaSalas() {
-  const [tableData, setTableData] = useState([]);
+  const [Reservas, setFormData] = useState({});
+  const history = useNavigate();
 
   const { id } = useParams();
 
   useEffect(() => {
-    async function fetchTableData() {
-      try {
-        //const response = await axios.get('http://localhost:5000/api/salas');
-
-        const response = await salasService.getSalas();
-        console.log(response.data);
-        setTableData(response.data);
-      } catch (error) {
-        console.error(error);
-      }
-    }
-    fetchTableData();
-  }, []);
-
-  async function handleDelete(id) {
-    try {
-      //await axios.delete(`http://localhost:5000/api/salas/${id}`);
-      const response = await salasService.deleteSalas(id);
-      alert("deletado com sucesso!");
-      this.fetchTableData();
+    async function fetchFormData () {
+    
+    try {        
+      const response = await reservasService.getoneReservas(id);
+      setFormData(response.data);
     } catch (error) {
       console.error(error);
     }
+
+    };
+    fetchFormData();
+  },[id]); 
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      
+      //const id = event.target._id.value;
+      if (event.nativeEvent.submitter.name === "salvar") {
+        alert(id);
+        if (id === ":id") {
+          
+            await reservasService.postReservas(Reservas);
+            alert('incluido com sucesso!'); 
+        }
+        else {
+            alert("teste")
+            await reservasService.putReservas(id,Reservas);
+            alert('alterado com sucesso!');
+        }
+      }
+    } catch (error) {
+      console.error(error);
+    }
+    history(-1);
   }
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({ ...Reservas, [name]: value });
+  };
 
   return (
     <Container fluid >
       <div className="reservasalas">
-        <Form className="reservas__container">
+        <Form className="reservas__container" onSubmit={handleSubmit}>
           <div className="primeiraCol">
           <ComboSalas/>
           {console.log(ComboSalas)}
-            <div className="carrossel">
-              <Carousel>
-                {tableData.map((item, index) => (
-                  <Carousel.Item key={item.id}>
-                    
-                      <Card.Img
-                        key={index}
-                        src={item.imagem}
-                        alt=""
-                        className="imageres"
-                      />
-                   
-
-                    <Carousel.Caption className="carrosselTexto">
-                      <div className="imgLetras">
-                        <h3>{item.tipo}</h3>
-                        <p>{item.descricao}</p>
-                      </div>
-                    </Carousel.Caption>
-                  </Carousel.Item>
-                ))}
-              </Carousel>
-            </div>
+           
             
           </div>
 
@@ -98,8 +94,10 @@ function ReservaSalas() {
             <Form.Label>Obs.</Form.Label>
             <Form.Control type="text"></Form.Control>
           </div>
-          <Form.Control type="submit" value={"Confirma"}/>
-          <Form.Control type="submit" value={"Cancela"}/>
+          <div className="buttons">
+            <Form.Control type="submit" value={"Confirma"}/>
+            <Form.Control type="submit" value={"Cancela"}/>
+          </div>
         </Form>
       </div>
     </Container>
