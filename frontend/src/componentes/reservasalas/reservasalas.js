@@ -21,62 +21,103 @@ import reservasService from "../../services/reservasService";
 import './style.css'
 
 function ReservaSalas() {
-  const [Reservas, setFormData] = useState({});
-  const history = useNavigate();
-
   const { id } = useParams();
-
+  const [reserva, setFormData] = useState({});
+  const [selectedValue, setSelectedValue] = useState('');
+  const history = useNavigate();
+  
   useEffect(() => {
-    async function fetchFormData () {
-    
-    try {        
-      const response = await reservasService.getoneReservas(id);
-      setFormData(response.data);
-    } catch (error) {
-      console.error(error);
-    }
-
-    };
-    fetchFormData();
-  },[id]); 
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    try {
+      async function fetchFormData () {
       
-      //const id = event.target._id.value;
-      if (event.nativeEvent.submitter.name === "salvar") {
-        alert(id);
-        if (id === ":id") {
-          
-            await reservasService.postReservas(Reservas);
-            alert('incluido com sucesso!'); 
+      try {        
+        
+        if (id !== 'inserir') {
+        const response = await reservasService.getoneReservas(id);
+        setFormData(response.data);
         }
-        else {
-            alert("teste")
-            await reservasService.putReservas(id,Reservas);
-            alert('alterado com sucesso!');
-        }
+
+      } catch (error) {
+        console.error(error);
       }
-    } catch (error) {
-      console.error(error);
+  
+      };
+      fetchFormData();
+    },[id]); 
+
+    const handleSubmit = async (event) => {
+      event.preventDefault();
+      try {
+        
+        if (event.nativeEvent.submitter.name === "salvar") {
+         
+          reserva.funcionario = 'WEB - Internet';
+          reserva.cliente = 'Internet - WWW';
+          reserva.status = 'R'; // indicar sala reservada
+          reserva.valortotal = 1;
+          
+          alert(reserva.numero);
+          alert(reserva.sala);
+
+          alert(reserva.cliente);
+          
+          alert(reserva.data);
+          
+          alert(reserva.inicio);
+          
+          alert(reserva.fim);
+          
+          alert(reserva.valor);
+          
+          alert(reserva.valortotal);
+          
+          alert(reserva.observacao);
+
+          alert(reserva.status);
+
+          if (id === 'inserir') {
+              
+            alert(reserva.sala)
+              await reservasService.postReservas(reserva);
+              alert('incluido com sucesso!');
+               
+          }
+          else {
+              
+              await reservasService.putReservas(id,reserva);
+              alert('alterado com sucesso!');
+              
+          }
+        }
+      } catch (error) {
+        console.error(error);
+      }
+      history(-1);
     }
-    history(-1);
-  }
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormData({ ...Reservas, [name]: value });
-  };
+    const handleChange = (event) => {
+      const { name, value } = event.target;
+      setFormData({ ...reserva, [name]: value });
+    };
 
+    const clienteChange = (event) => {
+      const { name, value } = event.target;
+      setFormData({ ...reserva, [name]: value });
+    };
+
+    const handleSelectChange = (value) => {
+      setSelectedValue(value);      
+      reserva.sala = value;
+    };
+  
   return (
     <Container fluid >
       <div className="reservasalas">
         <Form className="reservas__container" onSubmit={handleSubmit}>
           <div className="primeiraCol">
-          <ComboSalas/>
-          {console.log(ComboSalas)}
-           
+          <Form.Label>Valor select</Form.Label>
+          <Form.Control name='sala' type="text" value={selectedValue} readOnly />
+          <ComboSalas onSelectChange={handleSelectChange}/>
+          
             
           </div>
 
@@ -95,7 +136,7 @@ function ReservaSalas() {
             <Form.Control type="text"></Form.Control>
           </div>
           <div className="buttons">
-            <Form.Control type="submit" value={"Confirma"}/>
+            <Form.Control type="submit" name="salvar" value={"salvar"}/>
             <Form.Control type="submit" value={"Cancela"}/>
           </div>
         </Form>

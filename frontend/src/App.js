@@ -24,7 +24,7 @@ function App() {
           <Route path="/clientes" element={<Clientes/>} />
           <Route path="/funcionarios" element={<Funcionarios/>} />
           <Route path="/salas/:id" element={<Salas/>} />
-          <Route path="/reservasalas" element={<ReservaSalas/>} />
+          <Route path="/reservasalas/:id" element={<ReservaSalas/>} />
           <Route path="/reservas" element={<Reserva/>} />
 
           <Route path="/funcionarios/:id" element={<IncluiFunc/>} />

@@ -16,29 +16,45 @@ import {
 import "bootstrap/dist/css/bootstrap.min.css";
 import salasService from "../../services/salasService";
 import './style.css'
-function ComboSalas() {
+function ComboSalas({ onSelectChange }) {
   const [salaReservas, setSalas] = useState([]);
 
+  const [selectData, setSelectData] = useState([]);
+  const [selectedValue, setSelectedValue] = useState([]);
+
   useEffect(() => {
-    const fetchComboData = async () => {
+    
+    async function fetchSelectData () {
+    
       try {
-        const responseSala = await salasService.getSalas();
-        console.log(responseSala);
-        setSalas(responseSala.data);
+        const response = await salasService.getSalas();
+        setSelectData(response.data);
       } catch (error) {
         console.error(error);
       }
-    };
-    fetchComboData();
-  }, []);
+  
+      };
+      fetchSelectData();
+      
+  },[]); 
+
+
+
+const handleChange = (event) => {
+  const value = event.target.value;    
+  setSelectedValue(value);
+  onSelectChange(value);
+};
 
   return (
     <div className="form__select">
-    <Form.Select >
-      {salaReservas.map((row, index) => {
-        return <option className="form__select">{row.tipo}</option>;
-      })}
-    </Form.Select>
+     <Form.Control as = 'select' value={selectedValue} onChange={handleChange}>
+            {selectData.map(item => (
+                <option key={item._id} value={item._id}>
+                  {item.numero} - {item.nome} - {item.descricao}
+                </option>
+              ))}
+        </Form.Control>
     </div>
   );
 }

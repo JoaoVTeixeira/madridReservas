@@ -14,7 +14,7 @@ function Reserva() {
 
     <Container fluid className='botaoContainer'>
      <div className='botao'>
-     <Link to="/reservasalas" class="bn13">RESERVAS ABERTAS</Link>
+     <Link to="/reservasalas/inserir" class="bn13">RESERVAS ABERTAS</Link>
 
      </div>
      
