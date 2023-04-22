@@ -1,0 +1,52 @@
+[{
+  "_id": {
+    "$oid": "6404bb976908dcb5c3f8612b"
+  },
+  "cpf": {
+    "$numberLong": "3948085250"
+  },
+  "nome": "daniel",
+  "cep": 464531455,
+  "email": "gabrielsouza2006.2005@gmai.com",
+  "funcao": "operador",
+  "tel": 6565656
+},{
+  "_id": {
+    "$oid": "6425dcc2e80b266d72dbdb78"
+  },
+  "cpf": {
+    "$numberLong": "70582284260"
+  },
+  "nome": "davi",
+  "cep": 69086417,
+  "__v": 0,
+  "email": "leandro.pf.am@gmail.com",
+  "funcao": "operador",
+  "tel": 6565656
+},{
+  "_id": {
+    "$oid": "64272845cd9bc7f132c8bee1"
+  },
+  "cpf": {
+    "$numberLong": "4582206204"
+  },
+  "nome": "teste2",
+  "cep": 69018150,
+  "__v": 0,
+  "email": "leandro.pf.am@gmail.com",
+  "funcao": "operador",
+  "tel": 6565656
+},{
+  "_id": {
+    "$oid": "64273e56ab98a1f0eabd2e7d"
+  },
+  "cpf": {
+    "$numberLong": "4582206204"
+  },
+  "nome": "leandreo",
+  "cep": 9898989,
+  "tel": 6565656,
+  "email": "leandro.pf.am@gmail.com",
+  "funcao": "operador",
+  "__v": 0
+}]

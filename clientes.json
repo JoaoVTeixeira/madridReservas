@@ -1,0 +1,34 @@
+[{
+  "_id": {
+    "$oid": "640cd89ee9eece2ac03ba7cc"
+  },
+  "cpf": 64136641,
+  "nome": "leandreo",
+  "cep": 9684,
+  "email": "gabrielsouza2006.2005@gmai.com",
+  "tel": 6565656
+},{
+  "_id": {
+    "$oid": "6425e47443f89305f8507eec"
+  },
+  "cpf": {
+    "$numberLong": "4582206204"
+  },
+  "nome": "davi",
+  "cep": 69018150,
+  "__v": 0,
+  "email": "leandro.pf.am@gmail.com",
+  "tel": 6565656
+},{
+  "_id": {
+    "$oid": "64273b7d71f88ca50fcba695"
+  },
+  "cpf": {
+    "$numberLong": "3948085250"
+  },
+  "nome": "daniel",
+  "cep": 464531455,
+  "tel": 655657,
+  "email": "lelelel@gmail.com",
+  "__v": 0
+}]

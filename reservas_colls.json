@@ -1,0 +1,52 @@
+[{
+  "_id": {
+    "$oid": "642c6e2d9ef7b6172fffd2d7"
+  },
+  "numero": 1,
+  "sala": "sala Premium",
+  "cliente": "João",
+  "data": {
+    "$date": "2023-04-04T00:00:00.000Z"
+  },
+  "inicio": 12,
+  "fim": 13,
+  "valor": 200,
+  "valortotal": 20,
+  "observacao": "teste ",
+  "status": "C",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "642c7012ac810a859c1bfa02"
+  },
+  "numero": 2,
+  "sala": "Sala confort",
+  "cliente": "Davi",
+  "data": {
+    "$date": "2023-04-04T00:00:00.000Z"
+  },
+  "inicio": 12,
+  "fim": 13,
+  "valor": 200,
+  "valortotal": 20,
+  "observacao": "teste ",
+  "status": "ocupado",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "642c710c48ea0796d56d7697"
+  },
+  "numero": 3,
+  "sala": "Biblioteca",
+  "cliente": "Daniel",
+  "data": {
+    "$date": "2023-04-04T00:00:00.000Z"
+  },
+  "inicio": 12,
+  "fim": 13,
+  "valor": 200,
+  "valortotal": 20,
+  "observacao": "teste ",
+  "status": "ocupado",
+  "__v": 0
+}]

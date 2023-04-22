@@ -1,0 +1,57 @@
+[{
+  "_id": {
+    "$oid": "6414aa3b0dbd5838b52ff7fc"
+  },
+  "nome": "Sala Premium",
+  "tipo": "premium",
+  "capacidade": 10,
+  "valor": 1200,
+  "img": "https://s32907.pcdn.co/wp-content/uploads/2020/02/mesa-sala-de-reuni%C3%A3o-22022020.jpg",
+  "descricao": "Sala extremamente ampla",
+  "numero": 1
+},{
+  "_id": {
+    "$oid": "6414c6100dbd5838b52ff7fe"
+  },
+  "nome": " Sala Confort",
+  "tipo": "confort",
+  "capacidade": 10,
+  "valor": 1300,
+  "img": "https://www.flowork.com.br/wp-content/uploads/2017/08/conheca-as-salas-de-reuniao-perfeitas-pro-seu-negocio-flowork-escritorios-mobiliados-green-office-moinhos-de-vento-porto-alegre-rs-05-1.jpg",
+  "descricao": "Sala confortavel",
+  "numero": 2
+},{
+  "_id": {
+    "$oid": "6414c6900dbd5838b52ff801"
+  },
+  "nome": "Biblioteca",
+  "tipo": "estudo",
+  "capacidade": 10,
+  "valor": 1200,
+  "img": "https://img.freepik.com/fotos-premium/sala-de-leitura-com-sofa-e-biblioteca_360032-1284.jpg?w=2000",
+  "descricao": "Sala estudo",
+  "numero": 3
+},{
+  "_id": {
+    "$oid": "6414c7180dbd5838b52ff803"
+  },
+  "nome": "Sala Lazer",
+  "tipo": "lazer",
+  "capacidade": 10,
+  "valor": 1400,
+  "img": "https://images.adsttc.com/media/images/624d/7e54/5905/d001/6679/9c79/large_jpg/area-descompressao-08a.jpg?1649245799",
+  "descricao": "Area para descansar",
+  "numero": 4
+},{
+  "_id": {
+    "$oid": "6424832e917f72708d7d5777"
+  },
+  "nome": "Sala Teste",
+  "tipo": "teste",
+  "valor": 1200,
+  "img": "https://htecmultimidia.com.br/wp-content/uploads/2019/03/salas-reuniao-1.jpg",
+  "descricao": "Sala só para teste",
+  "numero": 6,
+  "__v": 0,
+  "capacidade": 10
+}]
