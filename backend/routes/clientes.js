@@ -4,6 +4,7 @@ const clienteController = require('../controllers/clientecontroller.js');
 
 router.get('/', clienteController.getCliente);
 router.get('/:id', clienteController.getClienteId);
+router.get('/cpf/:cpf', clienteController.getClienteByCPF);
 
 router.post('/', clienteController.createCliente);
 router.put('/:id', clienteController.updateCliente);

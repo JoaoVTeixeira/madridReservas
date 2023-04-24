@@ -123,17 +123,21 @@ function ReservaSalas() {
 
           <div className="segundaCol">
             <Form.Label>dia</Form.Label>
-            <Form.Control id="dia" type="date" />
+            <Form.Control  value={reserva.data} name="data" type="date" onChange={handleChange} />
 
             <Form.Label>Hora Inicial</Form.Label>
 
-            <Form.Control id="horaini" type="time" />
+            <Form.Control  value={reserva.inicio} name="inicio" type="time" onChange={handleChange}  />
 
             <Form.Label>Hora Final</Form.Label>
 
-            <Form.Control id="horafim" type="time" />
+            <Form.Control value={reserva.fim} name="fim" type="time" onChange={handleChange}  />
+            <Form.Label>Valor.</Form.Label>
+            <Form.Control type="text" value={reserva.valor} name="valor" onChange={handleChange} ></Form.Control>
+            <Form.Label>Valor Total</Form.Label>
+            <Form.Control type="text" value={reserva.valortotal} name="valortotal" onChange={handleChange} ></Form.Control>            
             <Form.Label>Obs.</Form.Label>
-            <Form.Control type="text"></Form.Control>
+            <Form.Control type="text" value={reserva.observacao} name="observacao" onChange={handleChange} ></Form.Control>
           </div>
           <div className="buttons">
             <Form.Control type="submit" name="salvar" value={"salvar"}/>

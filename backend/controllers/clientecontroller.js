@@ -18,6 +18,16 @@ exports.getClienteId = async (req, res) => {
   }
 };
 
+exports.getClienteByCPF = async (req, res) => {
+  try {
+    const clientes = await ClienteModel.find({cpf: `${req.params.cpf}`})
+    res.json(clientes)
+}catch(error) {
+    res.status(500).json({ message: error.message });
+
+}
+};
+
 exports.createCliente = async (req, res) => {
     try {
       res.status(201).json(await ClienteModel.create(req.body));
