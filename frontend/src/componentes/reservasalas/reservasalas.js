@@ -12,10 +12,10 @@ import {
   Dropdown,
   DropdownButton,
   Carousel,
-  Card,
+  Card
 } from "react-bootstrap";
 import Cabecalho from "../Cabecalho/cabecalho";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate,  Link } from "react-router-dom";
 import ComboSalas from "../combosalas.js/combosalas";
 import reservasService from "../../services/reservasService";
 import './style.css'
@@ -54,29 +54,10 @@ function ReservaSalas() {
           reserva.cliente = 'Internet - WWW';
           reserva.status = 'R'; // indicar sala reservada
           reserva.valortotal = 1;
-          
-          alert(reserva.numero);
-          alert(reserva.sala);
-
-          alert(reserva.cliente);
-          
-          alert(reserva.data);
-          
-          alert(reserva.inicio);
-          
-          alert(reserva.fim);
-          
-          alert(reserva.valor);
-          
-          alert(reserva.valortotal);
-          
-          alert(reserva.observacao);
-
-          alert(reserva.status);
-
+       
+          console.log(reserva)
           if (id === 'inserir') {
               
-            alert(reserva.sala)
               await reservasService.postReservas(reserva);
               alert('incluido com sucesso!');
                
@@ -91,7 +72,6 @@ function ReservaSalas() {
       } catch (error) {
         console.error(error);
       }
-      history(-1);
     }
 
     const handleChange = (event) => {
@@ -117,12 +97,16 @@ function ReservaSalas() {
           <Form.Label>Valor select</Form.Label>
           <Form.Control name='sala' type="text" value={selectedValue} readOnly />
           <ComboSalas onSelectChange={handleSelectChange}/>
+          <Form.Label>CPF:<Form.Control type="number" name="cpf" value={reserva.cpf} onChange={clienteChange}/></Form.Label>
           
-            
-          </div>
+          <Form.Label>Nome:<Form.Control type="text" name="nome" value={reserva.nome} onChange={clienteChange}/></Form.Label>
+          <Link to="/clientesmodal/:id">
+          <Button variant='success'>
+            CADASTRE-SE
+          </Button>
+          </Link>
 
-          <div className="segundaCol">
-            <Form.Label>dia</Form.Label>
+          <Form.Label>dia</Form.Label>
             <Form.Control  value={reserva.data} name="data" type="date" onChange={handleChange} />
 
             <Form.Label>Hora Inicial</Form.Label>
@@ -132,17 +116,25 @@ function ReservaSalas() {
             <Form.Label>Hora Final</Form.Label>
 
             <Form.Control value={reserva.fim} name="fim" type="time" onChange={handleChange}  />
-            <Form.Label>Valor.</Form.Label>
-            <Form.Control type="text" value={reserva.valor} name="valor" onChange={handleChange} ></Form.Control>
+            
+          </div>
+
+          <div className="segundaCol">
+          <Form.Label>Numero da reserva</Form.Label>
+            <Form.Control type="number" value={reserva.numero} name="numero" onChange={handleChange} ></Form.Control>
+            
+            <Form.Label>Valor</Form.Label>
+            <Form.Control type="number" value={reserva.valor} name="valor" onChange={handleChange} ></Form.Control>
             <Form.Label>Valor Total</Form.Label>
-            <Form.Control type="text" value={reserva.valortotal} name="valortotal" onChange={handleChange} ></Form.Control>            
+            <Form.Control type="number" value={reserva.valortotal} name="valortotal" onChange={handleChange} ></Form.Control>            
             <Form.Label>Obs.</Form.Label>
             <Form.Control type="text" value={reserva.observacao} name="observacao" onChange={handleChange} ></Form.Control>
-          </div>
-          <div className="buttons">
+            <div className="buttons">
             <Form.Control type="submit" name="salvar" value={"salvar"}/>
             <Form.Control type="submit" value={"Cancela"}/>
           </div>
+          </div>
+          
         </Form>
       </div>
     </Container>
