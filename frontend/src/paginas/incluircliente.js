@@ -14,8 +14,6 @@ import clientesService from '../services/clientesService';
 
 
 function Salas() {
-  const location = useLocation();
-  const classBtn = location.state.classe;
   const { id } = useParams();
   const [cliente, setFormData] = useState({});
   const history = useNavigate();
@@ -90,10 +88,10 @@ function Salas() {
               <Form.Label>Email:</Form.Label>
               <Form.Control type="text" name="email" value={cliente.email} onChange={handleChange}/>
               <Form.Label>Telefone:</Form.Label>
-              <Form.Control type="text" name="telefone" value={cliente.telefone} onChange={handleChange}/>
+              <Form.Control type="text" name="tel" value={cliente.tel} onChange={handleChange}/>
               
               <Row>
-                <Form.Control type='submit' value="salvar" name="salvar" className={classBtn}/>
+                <Form.Control type='submit' value="salvar" name="salvar" />
               </Row>
               </Container>
 
