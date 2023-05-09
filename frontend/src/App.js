@@ -12,6 +12,10 @@ import IncluiFunc from './paginas/incluifunc'
 import IncluiClient from './paginas/incluircliente'
 
 import Intranet from './paginas/index'
+import TelaUm from './paginas/tela1'
+import Cadastro from './paginas/cadastro'
+import Login from './paginas/login'
+
 
 function App() {
   return (
@@ -33,6 +37,11 @@ function App() {
           <Route path="/salas" element={<ListaSalas/>} />
           
           <Route path='/index' element={<Intranet/>}/>
+          <Route path='/tela1' element={<TelaUm/>}/>
+          <Route path='/cadastro' element={<Cadastro/>}/>
+          <Route path='/login' element={<Login/>}/>
+
+        
         </Routes>
       </BrowserRouter>    
 
