@@ -1,4 +1,4 @@
-const SalaController = require('./salacontroler');
+const SalaController = require('./salacontroller');
 const SalaModel = require('./salas');
 jest.mock('./salas');
 
@@ -30,7 +30,7 @@ describe('SalaController', () => {
         json: jest.fn(),
       };
 
-        await SalaController.getoneSala(req, res);
+        await SalaController.getSalaId(req, res);
         expect(SalaModel.SalaModel.findById).toHaveBeenCalledWith(salaId);
         expect(res.status).toHaveBeenCalledWith(400);
         expect(res.json).toHaveBeenCalledWith({ error: 'error' });
