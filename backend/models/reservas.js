@@ -9,7 +9,7 @@ var reserva = new Schema ({
     numero      : { type:Number, required: true},
     sala        : { type:String, required: true},
     cliente     : { type:String, required: true},
-    data        : { type:Date, required: true},            
+    data        : { type:Date  , required: true},            
     inicio      : { type:String, required: true},
     fim         : { type:String, required: true},    
     valor       : { type:Number, required: true},

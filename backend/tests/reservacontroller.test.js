@@ -1,7 +1,8 @@
-const reservaController = require('../reservas');
-const reservaModel = require('../../models/reservas');
+const reservaController = require('../controllers/reservas');
+const reservaModel = require('../models/reservas');
+jest.mock('../models/reservas.js');
 
-test('getSalas retorna todas as salas', async () => {
+test('Create Salas cria um sala', async () => {
   const reservaMock = [
     {
     "_id": {
@@ -36718,18 +36719,30 @@ test('getSalas retorna todas as salas', async () => {
     "status": "R",
     "__v": 0
   }];
-  reservaModel.reservaModel = {
-    find: jest.fn().mockResolvedValue(reservaMock),
-  };
 
-  const req = {};
+  const mockres = {
+    "_id": {
+      "$oid": "642c812288e063ee2c0503bb"
+    },
+    "numero": 8,
+    "sala": "640a3cf5122bfccdba2c163d",
+    "cliente": "Internet - WWW",
+    "data": {
+      "$date": {
+        "$numberLong": "1681689600000"
+      }
+    }
+  }
+
+reservaModel.create = jest.fn().mockResolvedValue(mockres);
+
+  const req = {body: mockres};
   const res = {
     json: jest.fn(),
     status: jest.fn().mockReturnThis(),
   };
 
-  await reservaController.getReservas(req, res);
+  await reservaController.createReserva(req, res);
 
-  expect(res.status).toHaveBeenCalledWith(200);
-  expect(res.json).toHaveBeenCalledWith(reservaMock);
+  expect(res.status).toHaveBeenCalledWith(201);
 });
